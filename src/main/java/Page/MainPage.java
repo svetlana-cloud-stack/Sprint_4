@@ -12,14 +12,12 @@ public class MainPage {
     public MainPage(WebDriver driver){
         this.driver = driver;
     }
-    public void openPage(){
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-    }
+
     // ЛОКАТОРЫ
     // верхняя кнопка "Заказать"
     private By topOrderBtn = By.cssSelector("button[class='Button_Button__ra12g']");
     // нижняя кнопка "Заказать"
-    private By bottomOrderBtn = By.cssSelector(".Button_Button__ra12g.Button_Middle__1CSJM");
+    private By bottomOrderBtn = By.cssSelector(".Button_Button__ra12g.Button_UltraBig__UU3Lp");
     // вопросы о важном
     private By questionIndex(int index) {
         return By.id("accordion__heading-" + index);
@@ -32,6 +30,11 @@ public class MainPage {
 
     // МЕТОДЫ
 
+    //  метод для перехода на страницу
+
+    public void openPage(){
+        driver.get("https://qa-scooter.praktikum-services.ru/");
+    }
     // метод для принятия куков
 
     public void acceptCookies() {
@@ -40,8 +43,8 @@ public class MainPage {
         }
     }
 
-  // метод для получения текста вопроса
-public String getQuestionText(int index) {
+    // метод для получения текста вопроса
+    public String getQuestionText(int index) {
     WebElement question = driver.findElement(questionIndex(index));
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", question);
     return question.getText();
@@ -57,5 +60,13 @@ public String getQuestionText(int index) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(ansIndex(index)));
         return driver.findElement(ansIndex(index)).getText();
+    }
+    // метод для клика на верхнюю кнопку "Заказать"
+    public void TopOrderButtonClick() {
+        driver.findElement(topOrderBtn).click();
+    }
+    // метод для клика на нижнюю кнопку "Заказать"
+    public void BottomOrderButtonClick() {
+        driver.findElement(bottomOrderBtn).click();
     }
 }
