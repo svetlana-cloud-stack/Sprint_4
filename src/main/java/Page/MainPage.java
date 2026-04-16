@@ -17,7 +17,7 @@ public class MainPage {
     // верхняя кнопка "Заказать"
     private By topOrderBtn = By.cssSelector("button[class='Button_Button__ra12g']");
     // нижняя кнопка "Заказать"
-    private By bottomOrderBtn = By.cssSelector(".Button_Button__ra12g.Button_UltraBig__UU3Lp");
+    private  By bottomOrderBtn = By.xpath("//div[contains(@class,'Home_FinishButton')]//button[text()='Заказать']");
     // вопросы о важном
     private By questionIndex(int index) {
         return By.id("accordion__heading-" + index);
@@ -65,8 +65,18 @@ public class MainPage {
     public void TopOrderButtonClick() {
         driver.findElement(topOrderBtn).click();
     }
+
+    // метод для скрола до нижней кнопки
+    private void scrollToElement(By locator) {
+        WebElement element = driver.findElement(locator);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+    }
+
     // метод для клика на нижнюю кнопку "Заказать"
     public void BottomOrderButtonClick() {
+        scrollToElement(bottomOrderBtn);
         driver.findElement(bottomOrderBtn).click();
     }
+
 }
+
