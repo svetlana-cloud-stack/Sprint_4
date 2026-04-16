@@ -30,6 +30,11 @@ public class OrderPage2 {
 
 
     //МЕТОДЫ
+    // проверка открытия второй формы
+    public boolean isOrderPage2Opened(){
+        return driver.findElement(dateField).isDisplayed();
+    }
+
     // мнтод для выбора дня
     public void selectDate(String day){
         driver.findElement(dateField).click();

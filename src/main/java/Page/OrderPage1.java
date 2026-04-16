@@ -1,6 +1,10 @@
 package Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
 public class OrderPage1 {
@@ -44,11 +48,13 @@ public class OrderPage1 {
 
     // метод для поля "Станция метро"
     private By stationOption(String stationName) {
-        return By.xpath("//div[@class='select-search__select']//button[contains(text(),'" + stationName + "')]");
+        return By.xpath("//*[contains(text(),'" + stationName + "')]");
     }
     public void selectStation(String station){
         driver.findElement(stationField).click();
         driver.findElement(stationField).sendKeys(station);
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.visibilityOfElementLocated(stationOption(station)));
         driver.findElement(stationOption(station)).click();
     }
 

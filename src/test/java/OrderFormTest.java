@@ -36,10 +36,39 @@ public class OrderFormTest extends BaseUITest {
     @Parameterized.Parameters
     public static Object[][] getData() {
         return new Object[][]{
-                {"Дина", "Омарова", "Москвская, 13", "Лубянка", "+99988877766", "26.04.2026", "black", "Позвонить по номеру +95468176231"},
-                {"Галина", "Кузнецрва", "Зубарева, 37", "Кропоткинская", "+95556664443", "28.04.2026", "null"},
+                {"Дина", "Омарова", "Москвская, 13", "Лубянка", "+99988877766", "26", "сутки", "black", "Позвонить по номеру +95468176231"},
+                {"Галина", "Кузнецрва", "Зубарева, 37", "Кропоткинская", "+95556664443", "28", "двое суток", "grey","не звонить"},
         };
     }
+@Test
+    public void createOrder(){
+        MainPage mainPage1 = new MainPage(driver);
+        OrderPage1 orderPage1 = new OrderPage1(driver);
+        OrderPage2 orderPage2 = new OrderPage2(driver);
 
+        mainPage.openPage();
+        mainPage.TopOrderButtonClick();
+
+        assertTrue(orderPage1.isOrderPage1Opened());
+
+        orderPage1.fillInOrderPage1( name, lastName, address, station, telNumber);
+        orderPage1.clickNextButton();
+
+        assertTrue(orderPage2.isOrderPage2Opened());
+
+        orderPage2.fillInOrderPage2(date, rentPeriod,comment);
+
+        if(colour.equals("black")) {
+            orderPage2.selectBlackColour();
+        } else if (colour.equals("grey")) {
+            orderPage2.selectGreyColour();
+        }
+        orderPage2.clickOrderBtn();
+        orderPage2.confirmOrder();
+
+        assertTrue(orderPage2.isOrderPlaced());
 
 }
+}
+
+
