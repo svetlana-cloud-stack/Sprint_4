@@ -1,11 +1,10 @@
 package Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class OrderPage1 {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public OrderPage1(WebDriver driver) {
         this.driver = driver;
@@ -20,7 +19,7 @@ public class OrderPage1 {
     private By lastNameField = By.xpath("//input[@placeholder='* Фамилия']");
     private By addressField = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']");
     private By stationField = By.xpath("//input[@placeholder='* Станция метро']");
-    private By telNumberFiled = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
+    private By telNumberField = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
 
     // кнопка далее
     private By nextButton = By.xpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
@@ -42,18 +41,32 @@ public class OrderPage1 {
     public void setAddressField(String address) {
         driver.findElement(addressField).sendKeys(address);
     }
-    // метод для поля "Телефон"
-    public void setTelNumberFiled(String telNumber){
-        driver.findElement(telNumberFiled).sendKeys(telNumber);
-    }
+
     // метод для поля "Станция метро"
+    private By stationOption(String stationName) {
+        return By.xpath("//div[@class='select-search__select']//button[contains(text(),'" + stationName + "')]");
+    }
     public void selectStation(String station){
         driver.findElement(stationField).click();
         driver.findElement(stationField).sendKeys(station);
-        driver.findElement(By.xpath("//*[text()='" + station + "']")).click();
+        driver.findElement(stationOption(station)).click();
+    }
+
+    // метод для поля "Телефон"
+    public void setTelNumberField(String telNumber){
+        driver.findElement(telNumberField).sendKeys(telNumber);
     }
     // метод для кнопки "Далее"
     public void clickNextButton(){
         driver.findElement(nextButton).click();
+    }
+
+    // метод для заполения первой формы
+    public void fillInOrderPage1(String name, String lastname, String address, String station, String telNumber){
+        setNameField(name);
+        setLastNameField(lastname);
+        setAddressField(address);
+        selectStation(station);
+        setTelNumberField(telNumber);
     }
 }
