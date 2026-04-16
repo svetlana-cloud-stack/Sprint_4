@@ -25,6 +25,13 @@ public class OrderPage1 {
     private By stationField = By.xpath("//input[@placeholder='* Станция метро']");
     private By telNumberField = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
 
+    // ошибки полей формы заказа
+    private By nameFieldError = By.xpath("//input[@placeholder='* Имя']/following-sibling::div");
+    private By lastNameError = By.xpath("//input[@placeholder='* Фамилия']/following-sibling::div");
+    private By addressError = By.xpath("//input[@placeholder='* Адрес: куда привезти заказ']/following-sibling::div");
+    private By telNumberError = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']/following-sibling::div");
+
+
     // кнопка далее
     private By nextButton = By.xpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
 
@@ -74,5 +81,22 @@ public class OrderPage1 {
         setAddressField(address);
         selectStation(station);
         setTelNumberField(telNumber);
+    }
+
+    // методы для получения текста ошибок
+    public String getNameErrorText() {
+        return driver.findElement(nameFieldError).getText();
+    }
+
+    public String getLastNameErrorText() {
+        return driver.findElement(lastNameError).getText();
+    }
+
+    public String getAddressErrorText() {
+        return driver.findElement(addressError).getText();
+    }
+
+    public String getTelNumberErrorText() {
+        return driver.findElement(telNumberError).getText();
     }
 }
