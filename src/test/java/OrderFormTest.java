@@ -45,6 +45,7 @@ public class OrderFormTest extends BaseUITest {
         OrderPage2 orderPage2 = new OrderPage2(driver);
 
         mainPage.openPage();
+        mainPage.acceptCookies();
         mainPage.TopOrderButtonClick();
 
         assertTrue(orderPage1.isOrderPage1Opened());
