@@ -1,4 +1,4 @@
-package Page;
+package ru.yandex.praktikum.page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,10 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class OrderPage1 {
+public class OrderPageCustomerData {
     private final WebDriver driver;
 
-    public OrderPage1(WebDriver driver) {
+    public OrderPageCustomerData(WebDriver driver) {
         this.driver = driver;
     }
     //ЛОКАТОРЫ

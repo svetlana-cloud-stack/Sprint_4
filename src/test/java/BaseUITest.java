@@ -1,4 +1,4 @@
-import Page.MainPage;
+import ru.yandex.praktikum.page.MainPage;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +10,9 @@ public class BaseUITest {
     protected MainPage mainPage;
 
     @Before
+    public void setUp(){
+        startBrowser();
+    }
     public void startBrowser() {
        String browser = System.getProperty("browser","chrome");
         if ("firefox".equals(browser)) {

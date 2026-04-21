@@ -1,5 +1,5 @@
-import Page.MainPage;
-import Page.OrderPage1;
+import ru.yandex.praktikum.page.MainPage;
+import ru.yandex.praktikum.page.OrderPageCustomerData;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -31,13 +31,13 @@ public class FieldErrorTest extends BaseUITest {
     }
 
     @Test
-    public void ShowErrorMessage() {
+    public void showErrorMessage() {
         MainPage mainPage = new MainPage(driver);
-        OrderPage1 orderPage1 = new OrderPage1(driver);
+        OrderPageCustomerData orderPage1 = new OrderPageCustomerData(driver);
 
         mainPage.openPage();
         mainPage.acceptCookies();
-        mainPage.TopOrderButtonClick();
+        mainPage.topOrderButtonClick();
 
         assertTrue(orderPage1.isOrderPage1Opened());
 

@@ -17,7 +17,7 @@ public class QuestionsTest extends BaseUITest {
         this.expectedAnswer = expectedAnswer;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Вопрос: {1}")
     public static Object [][] getTextData() {
         return new Object[][]{
                 {0,  "Сколько это стоит? И как оплатить?",
@@ -44,7 +44,7 @@ public class QuestionsTest extends BaseUITest {
         };
     }
     @Test
-    public void QuestionTest() {
+    public void questionTest() {
         mainPage.openPage();
         mainPage.acceptCookies();
         assertEquals(expectedQuestion,mainPage.getQuestionText(index));

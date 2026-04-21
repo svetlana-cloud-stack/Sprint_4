@@ -1,4 +1,4 @@
-import Page.MainPage;
+import ru.yandex.praktikum.page.MainPage;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -6,24 +6,24 @@ import static org.junit.Assert.assertTrue;
 public class LogosTest extends BaseUITest {
 
     @Test
-    public void OpenScooterPage() {
+    public void openScooterPage() {
         MainPage mainPage = new MainPage(driver);
 
         mainPage.openPage();
-        mainPage.ScooterLogoClick();
+        mainPage.scooterLogoClick();
 
         assertTrue(driver.getCurrentUrl().contains("scooter"));
     }
 
     @Test
-    public void OpenYandexPage() {
+    public void openYandexPage() {
         MainPage mainPage = new MainPage(driver);
 
         mainPage.openPage();
 
         String originalWindow = driver.getWindowHandle();
 
-        mainPage.YandexLogoClick();
+        mainPage.yandexLogoClick();
 
         // переключаемся на новую вкладку
         for (String windowHandle : driver.getWindowHandles()) {

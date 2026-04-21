@@ -1,6 +1,5 @@
-import Page.MainPage;
-import Page.OrderPage1;
-import Page.OrderPage2;
+import ru.yandex.praktikum.page.OrderPageCustomerData;
+import ru.yandex.praktikum.page.OrderPageRentData;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -35,37 +34,36 @@ public class OrderFormTest extends BaseUITest {
     public static Object[][] getData() {
         return new Object[][]{
                 {"Дина", "Омарова", "Москвская, 13", "Лубянка", "+99988877766", "26", "сутки", "black", "Позвонить по номеру +95468176231"},
-                {"Галина", "Кузнецрва", "Зубарева, 37", "Кропоткинская", "+95556664443", "28", "двое суток", "grey","не звонить"},
+                {"Галина", "Кузнецова", "Зубарева, 37", "Кропоткинская", "+95556664443", "28", "двое суток", "grey","не звонить"},
         };
     }
 @Test
-    public void createOrder(){
-        MainPage mainPage1 = new MainPage(driver);
-        OrderPage1 orderPage1 = new OrderPage1(driver);
-        OrderPage2 orderPage2 = new OrderPage2(driver);
+    public void createOrder() {
+    OrderPageCustomerData orderPageCustomer = new OrderPageCustomerData(driver);
+    OrderPageRentData orderPageRent = new OrderPageRentData(driver);
+
 
         mainPage.openPage();
         mainPage.acceptCookies();
-        mainPage.TopOrderButtonClick();
+        mainPage.topOrderButtonClick();
 
-        assertTrue(orderPage1.isOrderPage1Opened());
+        assertTrue(orderPageCustomer.isOrderPage1Opened());
 
-        orderPage1.fillInOrderPage1( name, lastName, address, station, telNumber);
-        orderPage1.clickNextButton();
+        orderPageCustomer.fillInOrderPage1( name, lastName, address, station, telNumber);
+        orderPageCustomer.clickNextButton();
 
-        assertTrue(orderPage2.isOrderPage2Opened());
+        assertTrue(orderPageRent.isOrderPage2Opened());
 
-        orderPage2.fillInOrderPage2(date, rentPeriod,comment);
+        orderPageRent.fillInOrderPage2(date, rentPeriod,comment);
 
         if(colour.equals("black")) {
-            orderPage2.selectBlackColour();
+            orderPageRent.selectBlackColour();
         } else if (colour.equals("grey")) {
-            orderPage2.selectGreyColour();
+            orderPageRent.selectGreyColour();
         }
-        orderPage2.clickOrderBtn();
-        orderPage2.confirmOrder();
-
-        assertTrue(orderPage2.isOrderPlaced());
+        orderPageRent.clickOrderBtn();
+        orderPageRent.confirmOrder();
+        assertTrue(orderPageRent.isOrderPlaced());
 
 }
 }

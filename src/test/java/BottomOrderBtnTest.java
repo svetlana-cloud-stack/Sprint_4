@@ -1,5 +1,5 @@
-import Page.MainPage;
-import Page.OrderPage1;
+import ru.yandex.praktikum.page.MainPage;
+import ru.yandex.praktikum.page.OrderPageCustomerData;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -7,12 +7,12 @@ import static org.junit.Assert.assertTrue;
 public class BottomOrderBtnTest extends BaseUITest {
 
     @Test
-    public void OpenOrderFormFromBottomButton() {
+    public void openOrderFormFromBottomButton() {
         MainPage mainPage = new MainPage(driver);
-        OrderPage1 orderPage1 = new OrderPage1(driver);
+        OrderPageCustomerData orderPage1 = new OrderPageCustomerData(driver);
 
         mainPage.openPage();
-        mainPage.BottomOrderButtonClick();
+        mainPage.bottomOrderButtonClick();
 
         assertTrue(orderPage1.isOrderPage1Opened());
     }

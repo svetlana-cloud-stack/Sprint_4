@@ -1,12 +1,18 @@
-package Page;
+package ru.yandex.praktikum.page;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
-public class OrderPage2 {
+public class OrderPageRentData {
     private final WebDriver driver;
 
-    public OrderPage2(WebDriver driver) {
+    public OrderPageRentData(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -24,8 +30,8 @@ public class OrderPage2 {
     private By orderButton = By.xpath("//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
     // подтверждение заказа
     private By confirmOrderBtn = By.xpath("//button[contains(text(),'Да')]");
-    private By cancelOrderBtn = By.xpath("//button[contains(text(),'Нет')]");
-    private By orderPlacedInfo = By.className("Order_Modal__YZ-d3");
+    private By cancelOrderBtn = By.xpath("//div[contains(@class,'Order_Buttons')]//button[text()='Нет']");
+    private By orderPlacedInfo = By.xpath("//div[contains(text(),'Заказ оформлен')]");
 
 
 
@@ -68,14 +74,14 @@ public class OrderPage2 {
         driver.findElement(orderButton).click();
     }
         // методы подтверждения заказа
-     public void confirmOrder(){
-        driver.findElement(confirmOrderBtn).click();
-     }
+        public void confirmOrder() {
+            driver.findElement(confirmOrderBtn).click();
+        }
     public void cancelOrder(){
         driver.findElement(cancelOrderBtn).click();
     }
     public boolean isOrderPlaced() {
-        return driver.findElement(orderPlacedInfo).isDisplayed();
+        return driver.findElements(orderPlacedInfo).size() > 0;
     }
         // метод для заполнения второй формы
     public void fillInOrderPage2(String date, String rentPeriod, String comment) {

@@ -1,4 +1,4 @@
-package Page;
+package ru.yandex.praktikum.page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class MainPage {
-    WebDriver driver;
+   public WebDriver driver;
     public MainPage(WebDriver driver){
         this.driver = driver;
     }
@@ -67,7 +67,7 @@ public class MainPage {
         return driver.findElement(ansIndex(index)).getText();
     }
     // метод для клика на верхнюю кнопку "Заказать"
-    public void TopOrderButtonClick() {
+    public void topOrderButtonClick() {
         driver.findElement(topOrderBtn).click();
     }
 
@@ -78,16 +78,16 @@ public class MainPage {
     }
 
     // метод для клика на нижнюю кнопку "Заказать"
-    public void BottomOrderButtonClick() {
+    public void bottomOrderButtonClick() {
         scrollToElement(bottomOrderBtn);
         driver.findElement(bottomOrderBtn).click();
     }
         // метод для клика на лого "Самокат"
-     public void ScooterLogoClick(){
+     public void scooterLogoClick(){
         driver.findElement(logoScooter).click();
      }
     // метод для клика на лого "Яндекс"
-     public void YandexLogoClick(){
+     public void yandexLogoClick(){
         driver.findElement(yandexLogo).click();
      }
 }
