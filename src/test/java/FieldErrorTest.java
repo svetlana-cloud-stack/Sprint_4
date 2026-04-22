@@ -33,33 +33,33 @@ public class FieldErrorTest extends BaseUITest {
     @Test
     public void showErrorMessage() {
         MainPage mainPage = new MainPage(driver);
-        OrderPageCustomerData orderPage1 = new OrderPageCustomerData(driver);
+        OrderPageCustomerData orderPageCustomerData = new OrderPageCustomerData(driver);
 
         mainPage.openPage();
         mainPage.acceptCookies();
         mainPage.topOrderButtonClick();
 
-        assertTrue(orderPage1.isOrderPage1Opened());
+        assertTrue(orderPageCustomerData.isCustomerDataPageOpened());
 
         if (fieldName.equals("name")) {
-            orderPage1.setNameField(invalidValue);
-            orderPage1.clickNextButton();
-            assertEquals(expectedError, orderPage1.getNameErrorText());
+            orderPageCustomerData.setNameField(invalidValue);
+            orderPageCustomerData.clickNextButton();
+            assertEquals(expectedError, orderPageCustomerData.getNameErrorText());
 
         } else if (fieldName.equals("lastName")) {
-            orderPage1.setLastNameField(invalidValue);
-            orderPage1.clickNextButton();
-            assertEquals(expectedError, orderPage1.getLastNameErrorText());
+            orderPageCustomerData.setLastNameField(invalidValue);
+            orderPageCustomerData.clickNextButton();
+            assertEquals(expectedError, orderPageCustomerData.getLastNameErrorText());
 
         } else if (fieldName.equals("address")) {
-                orderPage1.setAddressField(invalidValue);
-                orderPage1.clickNextButton();
-                assertEquals(expectedError, orderPage1.getAddressErrorText());
+            orderPageCustomerData.setAddressField(invalidValue);
+            orderPageCustomerData.clickNextButton();
+                assertEquals(expectedError, orderPageCustomerData.getAddressErrorText());
 
         } else if (fieldName.equals("phone")) {
-            orderPage1.setTelNumberField(invalidValue);
-            orderPage1.clickNextButton();
-            assertEquals(expectedError, orderPage1.getTelNumberErrorText());
+            orderPageCustomerData.setTelNumberField(invalidValue);
+            orderPageCustomerData.clickNextButton();
+            assertEquals(expectedError, orderPageCustomerData.getTelNumberErrorText());
         }
     }
 }

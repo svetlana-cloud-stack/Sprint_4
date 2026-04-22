@@ -9,11 +9,11 @@ public class BottomOrderBtnTest extends BaseUITest {
     @Test
     public void openOrderFormFromBottomButton() {
         MainPage mainPage = new MainPage(driver);
-        OrderPageCustomerData orderPage1 = new OrderPageCustomerData(driver);
+        OrderPageCustomerData orderPageCustomer = new OrderPageCustomerData(driver);
 
         mainPage.openPage();
         mainPage.bottomOrderButtonClick();
 
-        assertTrue(orderPage1.isOrderPage1Opened());
+        assertTrue(orderPageCustomer.isCustomerDataPageOpened());
     }
 }

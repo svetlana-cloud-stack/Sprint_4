@@ -47,14 +47,14 @@ public class OrderFormTest extends BaseUITest {
         mainPage.acceptCookies();
         mainPage.topOrderButtonClick();
 
-        assertTrue(orderPageCustomer.isOrderPage1Opened());
+        assertTrue(orderPageCustomer.isCustomerDataPageOpened());
 
-        orderPageCustomer.fillInOrderPage1( name, lastName, address, station, telNumber);
+        orderPageCustomer.fillInCustomerDataPage( name, lastName, address, station, telNumber);
         orderPageCustomer.clickNextButton();
 
-        assertTrue(orderPageRent.isOrderPage2Opened());
+        assertTrue(orderPageRent.isRentPageOpened());
 
-        orderPageRent.fillInOrderPage2(date, rentPeriod,comment);
+        orderPageRent.fillInRentPage(date, rentPeriod,comment);
 
         if(colour.equals("black")) {
             orderPageRent.selectBlackColour();

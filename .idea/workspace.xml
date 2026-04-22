@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb37dc1a-ad5c-4abb-bd60-9f8f5c78b505" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Page/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/praktikum/page/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Page/OrderPage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/praktikum/page/OrderPageCustomerData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Page/OrderPage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/praktikum/page/OrderPageRentData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BaseUITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BaseUITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/praktikum/page/OrderPageCustomerData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/praktikum/page/OrderPageCustomerData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/yandex/praktikum/page/OrderPageRentData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/yandex/praktikum/page/OrderPageRentData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BottomOrderBtnTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BottomOrderBtnTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/FieldErrorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FieldErrorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LogosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LogosTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/OrderFormTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/OrderFormTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/QuestionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/QuestionsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,26 +44,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.BottomOrderBtnTest.executor": "Run",
-    "JUnit.FieldErrorTest.executor": "Run",
-    "JUnit.Firefox Rest.executor": "Run",
-    "JUnit.LogosTest.executor": "Run",
-    "JUnit.OrderFormTest.executor": "Run",
-    "JUnit.QuestionsTest.executor": "Run",
-    "Maven.Sprint_4 [validate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.BottomOrderBtnTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FieldErrorTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Firefox Rest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LogosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.OrderFormTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.QuestionsTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Sprint_4 [validate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="O" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint_4" />

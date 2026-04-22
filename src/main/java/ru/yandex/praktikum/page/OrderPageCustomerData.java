@@ -37,7 +37,7 @@ public class OrderPageCustomerData {
 
     // МЕТОДЫ
     // метод для проверки открытия формы
-    public boolean isOrderPage1Opened() {
+    public boolean isCustomerDataPageOpened() {
         return driver.findElement(orderHeader).isDisplayed();
     }
     // метод для поля "Имя"
@@ -75,7 +75,7 @@ public class OrderPageCustomerData {
     }
 
     // метод для заполения первой формы
-    public void fillInOrderPage1(String name, String lastname, String address, String station, String telNumber){
+    public void fillInCustomerDataPage(String name, String lastname, String address, String station, String telNumber){
         setNameField(name);
         setLastNameField(lastname);
         setAddressField(address);

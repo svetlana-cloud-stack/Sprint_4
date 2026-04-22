@@ -1,10 +1,7 @@
 package ru.yandex.praktikum.page;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.time.Duration;
 
@@ -37,7 +34,7 @@ public class OrderPageRentData {
 
     //МЕТОДЫ
     // проверка открытия второй формы
-    public boolean isOrderPage2Opened(){
+    public boolean isRentPageOpened(){
         return driver.findElement(dateField).isDisplayed();
     }
 
@@ -84,7 +81,7 @@ public class OrderPageRentData {
         return driver.findElements(orderPlacedInfo).size() > 0;
     }
         // метод для заполнения второй формы
-    public void fillInOrderPage2(String date, String rentPeriod, String comment) {
+    public void fillInRentPage(String date, String rentPeriod, String comment) {
         selectDate(date);
         setRentPeriod(rentPeriod);
         setComment(comment);
